@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Account Settings - Accessible & Validated</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <main class="container">
+        <h1>Account Settings</h1>
+        <p class="description">Update your personal account details below. All fields marked with * are required.</p>
+
+        <div id="statusRegion" role="status" aria-live="polite" class="status-region"></div>
+
+        <form id="settingsForm" novalidate>
+            <div class="form-group">
+                <label for="username">Username <span class="required" aria-hidden="true">*</span></label>
+                <input type="text" id="username" name="username" aria-describedby="usernameHelp usernameError" aria-required="true" autocomplete="username">
+                <small id="usernameHelp" class="help-text">3-20 characters. Letters, numbers, and underscores only.</small>
+                <span class="error-message" id="usernameError" role="alert" aria-live="assertive"></span>
+            </div>
+
+            <div class="form-group">
+                <label for="email">Email Address <span class="required" aria-hidden="true">*</span></label>
+                <input type="email" id="email" name="email" aria-describedby="emailHelp emailError" aria-required="true" autocomplete="email">
+                <small id="emailHelp" class="help-text">We will send confirmation notifications to this email.</small>
+                <span class="error-message" id="emailError" role="alert" aria-live="assertive"></span>
+            </div>
+
+            <div class="form-group">
+                <label for="password">New Password <span class="required" aria-hidden="true">*</span></label>
+                <input type="password" id="password" name="password" aria-describedby="passwordHelp passwordError" aria-required="true" autocomplete="new-password">
+                <small id="passwordHelp" class="help-text">Min 8 characters. Must contain uppercase, lowercase, number, and special char.</small>
+                <span class="error-message" id="passwordError" role="alert" aria-live="assertive"></span>
+            </div>
+
+            <div class="form-group">
+                <label for="bio">Bio <span class="optional">(Optional)</span></label>
+                <textarea id="bio" name="bio" rows="3" aria-describedby="bioHelp bioError" maxlength="200"></textarea>
+                <small id="bioHelp" class="help-text"><span id="bioCharCount">0</span>/200 characters used.</small>
+                <span class="error-message" id="bioError" role="alert" aria-live="assertive"></span>
+            </div>
+
+            <div class="actions">
+                <button type="submit" id="submitBtn" class="btn btn-primary">Save Settings</button>
+                <button type="button" id="resetBtn" class="btn btn-secondary">Reset</button>
+            </div>
+        </form>
+    </main>
+
+    <script type="module" src="../src/settingsForm.js"></script>
+</body>
+</html>
