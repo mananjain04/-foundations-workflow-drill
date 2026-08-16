@@ -1,0 +1,11 @@
+{
+  "name": "foundations-workflow-drill",
+  "version": "1.0.0",
+  "description": "Workflow Drill: Vague Prompt vs Engineered Prompt",
+  "main": "src/settingsForm.js",
+  "type": "module",
+  "scripts": {
+    "test": "node --test test/*.test.js",
+    "start": "node server.js"
+  }
+}
